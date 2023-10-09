@@ -1,0 +1,57 @@
+﻿@page
+@model valupakvitamin.Pages.AdminModel
+@{
+	ViewData["Title"] = "Admin";
+}
+<div class="row">
+	<div class="col-12">
+		<!-- Form -->
+			<section class="box">
+				<form asp-page-handler="GetProjectbyID" method="post">
+					<div class="row gtr-uniform gtr-50">
+						<div class="col-9 col-12-mobilep">
+							<input type="number" min="0" id="query"  asp-for="SearchId"  placeholder="Id yaz" />
+						</div>
+						<div class="col-3 col-12-mobilep">
+							<input type="submit" value="Ara" class="fit" />
+						</div>
+					</div>
+				</form>
+				<h3>Form</h3>
+				<form asp-page-handler="Form" method="post">
+					<div class="row gtr-uniform gtr-50">
+						<div class="col-6 col-12-mobilep">
+							<label class="form-label">ID</label>
+							<input type="text" class="form-control" asp-for="proje.id" readonly="True">
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label class="form-label">İlac Adi</label>
+							<input type="text" placeholder="İlac Adı" class="form-control" asp-for="proje.name">
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label class="form-label">Resim Baglantisi</label>
+							<input type="text" placeholder="https://www.yerelingundemi.com/images/posts.jpg" class="form-control" asp-for="proje.image">
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label class="form-label">İlac Barkodu</label>
+							<input type="text" placeholder="8437823603498" class="form-control" asp-for="Barkod">
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label class="form-label">Learn More Bağlantısı</label>
+							<input type="text" placeholder="https://valupak.co.uk/collections/supplements/products/chewable-vitamin-c-500mg" class="form-control" asp-for="proje.url">
+						</div>
+						<div class="col-12">
+							<label class="form-label">İlac Detayi</label>
+							<textarea type="text" class="form-control" placeholder="İlac Detayi giriniz" rows="6" asp-for="proje.description"></textarea>
+						</div>
+						<div class="col-12">
+							<ul class="actions">
+								<li><input type="submit" value="Ekle/Guncelle" class="btn btn-primary"/></li>
+								<li><input type="submit" value="Sil" class="btn btn-primary" asp-page-handler="DeletebyID"/></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</section>
+	</div>
+</div>

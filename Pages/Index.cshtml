@@ -1,0 +1,106 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<body class="landing is-preload">
+		<div id="page-wrapper">
+			<!-- Banner -->
+			
+				<section id="banner">
+					@if (Model.Status == "Success")
+					{
+						<div class="alert alert-success" role="alert">Basarili!</div>
+					}
+					else if (Model.Status == "Error")
+					{
+						<div class="alert alert-danger" role="alert">Hata!</div>
+					}
+					<h2>Valupak Vitamin</h2>
+					<div>
+						
+						<div style="background-color:red; margin:20px;">
+							<p style="margin:30px;">
+								Not: Proje Tanıtım<br>Admin Sayfasından Home sayfasına ürün ekele, sil, arama ve güncelleme yapılabilir. Home sayfasından ise müşteri hangi ürün/ürünler almak istiyorsa sepete ekle basarsa ürünü sepete sayfasına eklenir. Sepet sayfasından da ürün silebilir.
+							</p>
+						</div>
+					</div>
+					
+					<!--<ul class="actions special">
+						<li><a asp-page="/qrkod" asp-page-handler="qrkod" class="button primary">Okut</a></li>
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>-->
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>VALUPAK PRODUCTS</h2>
+							<p>Valupak was one of the first brands to be developed and distributed by BR Pharmaceuticals in 1995, providing high quality, low cost vitamins to the consumer.</p>
+						</header>
+						<span class="image featured"><img src="images/banner2.jpg" alt="" /></span>
+					</section>
+
+					<section class="box special features">
+						<div class="features-row">
+							<section>
+								<span class="icon solid major fa-bolt accent2"></span>
+								<h3>Magna etiam</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-chart-area accent3"></span>
+								<h3>Ipsum dolor</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="icon solid major fa-cloud accent4"></span>
+								<h3>Sed feugiat</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-lock accent5"></span>
+								<h3>Enim phasellus</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+					</section>
+						<div class="row">
+							@foreach (var proje in Model.Projects)
+							{
+								<div class="col-6 col-12-narrower">
+									<section class="box special">
+										<span class="image featured"><img src="@proje.image" alt="" /></span>
+										<h3 class="card-title">@proje.name</h3>
+										<p class="card-text">@proje.description</p>
+										<ul class="actions special">
+											<li><a href="@proje.url" class="button alt">Learn More</a></li>
+											<form asp-page-handler="SepetEkle" method="post">
+												<input type="text" class="form-control" style="display:none;" asp-for="proje.id" value="@proje.id" readonly="True">
+												<input type="text" class="form-control" style="display:none;" asp-for="proje.name" value="@proje.name">
+												<input type="text" class="form-control" style="display:none;" asp-for="proje.image" value="@proje.image">
+												<input type="text" class="form-control" style="display:none;" asp-for="proje.url" value="@proje.url">
+												<input type="text" class="form-control" style="display:none;" asp-for="proje.description" value="@proje.description"/>
+											<li><input type="submit" value="Sepete Ekle" class="btn btn-primary"/></li>
+											</form>
+										</ul>
+										
+										
+									</section>
+								</div>
+							}
+						</div>
+					</section>
+			<!-- CTA -->
+				<section id="cta">
+					<h2>VALUPAK PRODUCTS</h2>
+					<p>Providing over 35 high quality, low cost vitamins to consumers all over the world.</p>
+				</section>
+			</div>
+		</body>

@@ -1,0 +1,44 @@
+﻿@page
+@model valupakvitamin.Pages.SepetModel
+@{
+    ViewData["Title"] = "Sepet";
+}
+<section class="box">
+	<h3>Sepete</h3>
+	<div class="table-wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th>İmage</th>
+					<th>Name</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var proje in Model.Projects)
+				{		
+					<tr>
+						<td><img style="width:50px; height:50px;" src="@proje.image" alt="" /></td>
+						<td><h3 class="card-title">@proje.name</h3></td>
+						<td><ul class="actions special">
+							<form asp-page-handler="DeletebyID" method="post">
+								<input type="text" class="form-control" style="display:none;" asp-for="proje.id" value="@proje.id" readonly="True">
+								<input type="text" class="form-control" style="display:none;" asp-for="proje.name" value="@proje.name">
+								<input type="text" class="form-control" style="display:none;" asp-for="proje.image" value="@proje.image">
+								<input type="text" class="form-control" style="display:none;" asp-for="proje.url" value="@proje.url">
+								<input type="text" class="form-control" style="display:none;" asp-for="proje.description" value="@proje.description"/>
+							<li><input type="submit" value="sil" class="btn btn-primary"/></li>
+							</form>
+						</ul></td>
+					</tr>	
+				}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</section>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "MULTI VITAMIN CHILDREN",
+    "description": "Micronutrient dense tablet formulated to support a balanced and varied diet and healthy lifestyle. Micronutrients play an important role in all bodily function, growth and development.",
+    "image": "images/multi-vitamin-children.jpg",
+    "url": "https://valupak.co.uk/collections/vitamins/products/multi-vitamin-children-s-oad",
+    "barkod": [
+      "1"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "ZINC - 10MG",
+    "description": "Each tablet of Zinc 10mg provides 100% NRV of this trace mineral. Zinc helps support the health of normal skin, hair and nails and also helps maintain normal vision and normal bones.",
+    "image": "images/zinc-10mg.jpg",
+    "url": "https://valupak.co.uk/collections/vitamins/products/zinc-10mg",
+    "barkod": [
+      "12"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "OMEGA-3 FISH OIL",
+    "description": "A food supplement providing the important fatty acids Eicosapentaenoic Acid (EPA)and Docosahexaenoic Acid (DHA). EPA and DHA contribute to the normal function of the heart.",
+    "image": "images/omega-3-fish-oil.jpg",
+    "url": "https://valupak.co.uk/collections/lifestyles/products/omega-3-fish-oil",
+    "barkod": [
+      "123"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "CHEWABLE VITAMIN C",
+    "description": "V.C helps in the maintenance of good health by playing a role in the normalfunction of the immune system. It also helps in normal energy releasing processes in the body and is an antioxidant vitamin that helps protect cells from.",
+    "image": "images/chewable-vitamin-c-500mg.jpg",
+    "url": "https://valupak.co.uk/collections/supplements/products/chewable-vitamin-c-500mg",
+    "barkod": [
+      "1234"
+    ]
+  }
+]
